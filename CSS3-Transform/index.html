@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        /* fungsi transform 
+            1. scale (untuk memperbesar)
+                sacle(angka),scaleX(angka),scaleY(angka)
+            2. rotate (untuk memutar)
+                rotate(deg),rotateX(deg),rotateY(deg)
+            3. skew (membuat condong) 
+                skew(deg),skewX(deg),skewY(deg)
+            4. translate (mengubah posisi)
+                translate(px),translateX(px),translateY(px)
+        */
+
+        p{
+            font-size: 20px;
+            text-align: center;
+            font-family: 'montserrat',sans-serif;
+        }
+
+        .kotak{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 50px auto 0;
+            transition: 0.5s;
+        }
+
+        .kotak:hover{
+            /* transform: scale(0.5); bisa ditulis begini transform: scale(1.5, 2) artinya yang 1.5 itu sumbu x dan yang 2 itu sumbu y */
+            
+            /* transform: rotate(-45deg); */
+
+            /* transform: skewY(-45deg); */
+
+            transform: translate(50px,50px);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="kotak"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nulla voluptatem repellat deleniti aut optio placeat quasi, exercitationem expedita esse? Quasi, ipsum laboriosam tempora nisi dolorem dolorum quidem iure officia?</p>
+</body>
+</html>
