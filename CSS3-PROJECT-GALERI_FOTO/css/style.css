@@ -1,0 +1,180 @@
+@font-face{
+    font-family: 'myfonts';
+    src: url('../font/Poppins-Regular.ttf') format('truetype');
+}
+
+body{
+    font: 18px/36px 'myfonts';
+    background-color: #d7d4d4;
+}
+
+h1{
+    font-size: 80px;
+    margin: 50px 0;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 2px 2px 2px white;
+}
+
+.container{
+    width: 800px;
+    background-color: white;
+    margin: auto;
+    padding: 16px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.galery ul{
+    margin: auto;
+}
+
+.galery li{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #666;
+    float: left;
+    margin-right: 30px;
+    position: relative;
+}
+
+/* .galery img{
+    border-radius: 50%;
+} */
+
+.galery li span{
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(200, 200, 200, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    color: #333;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px #ddd;
+    opacity: 0;
+    transform: scale(0) rotate(0);
+    transition: 0.3s;
+}
+
+.galery li a:hover span{
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+
+/* clear fix */
+.clear {
+    clear: both;
+}
+
+
+/* overlay */
+.overlay{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: 0.5s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target{
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay img{
+    max-height: 100%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.overlay:target img{
+    animation: zoomFade 1s;
+}
+
+.overlay .close{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -30px;
+    color: #ddd;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: black;
+    border: 1px solid #ddd;
+    line-height: 14px;
+    padding: 8px;
+    opacity: 0;
+}
+
+.overlay:target .close{
+    animation: slidedownFade 1s .5s forwards;
+}
+
+/* navigasi */
+.next, .prev{
+    width: 72px;
+    height: 72px;
+    background-image: url(../galeri/arrow_forward_ios.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 40%;
+    margin-left: 50px;
+    opacity: 0;
+}
+
+.prev{
+    background-image: url(../galeri/arrow_forward_ios-1.png);
+    margin-left: -120px;
+}
+
+.overlay:target .next, .overlay:target .prev{
+    animation: fade .5s .5s forwards;
+}
+
+/* animasi */
+@keyframes zoomFade{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slidedownFade{
+    0%{
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
